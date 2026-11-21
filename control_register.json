@@ -1,0 +1,52 @@
+{
+  "harness_controls": [
+    "validate_input",
+    "blind",
+    "refuse",
+    "log",
+    "escalate"
+  ],
+  "format_problems": [],
+  "entries": [
+    {
+      "control": "validate_input",
+      "principle": "Robustness, security and safety",
+      "principle_source": "OECD AI Principles (2019, amended 2024), principle 1.4; non-binding recommendation",
+      "instrument": "Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence'",
+      "provision": "Art. 18, part 2 (risk management) and Art. 8, part 1 (constant control of the system)",
+      "why_here": "In Part 4 the bare agent gave a decision for impossible values (GPA 9.9, exam -5); the check stops them before the model."
+    },
+    {
+      "control": "blind",
+      "principle": "Fairness and non-discrimination",
+      "principle_source": "UNESCO Recommendation on the Ethics of Artificial Intelligence (2021), principle on fairness and non-discrimination; non-binding",
+      "instrument": "Constitution of the Republic of Kazakhstan (1995) and Law No. 94-V 'On Personal Data and their Protection'",
+      "provision": "Constitution Art. 14 (equality, no discrimination); Law No. 94-V Art. 7, part 9 (no excessive data)",
+      "why_here": "In Part 1 my measurement found score changes when only the name or university changed; name and university are not merit, so the model does not see them."
+    },
+    {
+      "control": "refuse",
+      "principle": "Respect for human rights and privacy",
+      "principle_source": "OECD AI Principles (2019, amended 2024), principle 1.2; non-binding recommendation",
+      "instrument": "Law of the Republic of Kazakhstan No. 94-V of 21 May 2013 'On Personal Data and their Protection'",
+      "provision": "Art. 7, part 1 (consent) and part 8 (specific lawful purposes); Art. 8 (consent)",
+      "why_here": "In Part 4 the bare agent decided a wrong purpose, a 17-year-old, no consent and an instruction in the name; the harness refused 5 of 6 and refused 0 of 400 clean applicants."
+    },
+    {
+      "control": "log",
+      "principle": "Accountability",
+      "principle_source": "OECD AI Principles (2019, amended 2024), principle 1.5; non-binding recommendation",
+      "instrument": "Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence'",
+      "provision": "Art. 8, part 1 (responsibility and control); EU benchmark only: Regulation (EU) 2024/1689 Art. 12(1)",
+      "why_here": "The log keeps field names and not values, so a person can see later why a decision was made, including the refusals of Part 4."
+    },
+    {
+      "control": "escalate",
+      "principle": "Human oversight and determination",
+      "principle_source": "UNESCO Recommendation on the Ethics of Artificial Intelligence (2021), principle on human oversight and determination; non-binding",
+      "instrument": "Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence'",
+      "provision": "Art. 7, part 2 (right to object to automated processing); EU benchmark only: GDPR Art. 22(3)",
+      "why_here": "Scores are close near the threshold, so 50 of 400 profiles (12.5%) in the band 40 to 45 go to a person."
+    }
+  ]
+}
